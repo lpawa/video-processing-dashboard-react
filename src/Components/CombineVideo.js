@@ -12,7 +12,7 @@ class CombineVideo extends React.Component {
             ranges: [],
             isValid: false,
             outputVideo: null,
-        }
+        };
 
         this.addStart = this.addStart.bind(this);
         this.handleInput = this.handleInput.bind(this);
@@ -30,26 +30,26 @@ class CombineVideo extends React.Component {
             let end = parseInt(range.end);
             let url = range.video_url;
             return (acc && start >= 0 && end >= 0 && end >= start && url && validateUrl(url));
-        }, !!ranges.length)
+        }, !!ranges.length);
     }
 
     addStart(index, event) {
         let input = event.target.value;
         let ranges = this.state.ranges;
 
-        ranges[index]['start'] = parseInt(input);
+        ranges[parseInt(index)].start = parseInt(input);
 
         this.setState({
             ranges: ranges,
             isValid: this.checkValidity(ranges),
-        })
+        });
     }
 
     addEnd(index, event) {
         let input = event.target.value;
         let ranges = this.state.ranges;
 
-        ranges[index]['end'] = parseInt(input);
+        ranges[parseInt(index)].end = parseInt(input);
 
         this.setState({
             ranges: ranges,
@@ -80,7 +80,7 @@ class CombineVideo extends React.Component {
     handleVideoLinkChange(index, event) {
         let input = event.target.value;
         let ranges = this.state.ranges;
-        ranges[index]['video_url'] = input;
+        ranges[parseInt(index)].video_url = input;
 
         this.setState({
             ranges: ranges,
@@ -189,7 +189,7 @@ class CombineVideo extends React.Component {
                 }
 
             </div>
-        )
+        );
     }
 }
 

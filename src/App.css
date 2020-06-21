@@ -45,10 +45,6 @@ input, select, option {
   background-color: plum;
 }
 
-/*button:hover, .btn:hover {*/
-/*  border-color: white;*/
-/*}*/
-
 button:disabled,
 .btn:disabled {
   border: 1px solid #999999;

@@ -1,7 +1,7 @@
-const PROCESS_INTERVAL = "/api/process-interval"
-const PROCESS_RANGE = "/api/process-range"
-const PROCESS_SEGMENTS = "/api/process-segments"
-const COMBINE_VIDEO = "/api/combine-video"
+const PROCESS_INTERVAL = "/api/process-interval";
+const PROCESS_RANGE = "/api/process-range";
+const PROCESS_SEGMENTS = "/api/process-segments";
+const COMBINE_VIDEO = "/api/combine-video";
 
 const REQUEST_HEADERS = {
     mode: 'cors', // no-cors, *cors, same-origin
@@ -26,8 +26,8 @@ class SegmentVideoRepository {
                 body: JSON.stringify(data),
                 ...REQUEST_HEADERS
             }
-        )
-        return response.json()
+        );
+        return response.json();
     }
 
     async processRange(data) {
@@ -36,8 +36,8 @@ class SegmentVideoRepository {
                 body: JSON.stringify(data),
                 ...REQUEST_HEADERS
             }
-        )
-        return response.json()
+        );
+        return response.json();
     }
 
     async processSegments(data) {
@@ -46,8 +46,8 @@ class SegmentVideoRepository {
                 body: JSON.stringify(data),
                 ...REQUEST_HEADERS
             }
-        )
-        return response.json()
+        );
+        return response.json();
     }
 
     async combineVideo(data) {
@@ -56,8 +56,8 @@ class SegmentVideoRepository {
                 body: JSON.stringify(data),
                 ...REQUEST_HEADERS
             }
-        )
-        return response.json()
+        );
+        return response.json();
     }
 }
 

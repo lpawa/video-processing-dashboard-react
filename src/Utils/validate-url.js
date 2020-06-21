@@ -17,5 +17,5 @@ export function validateUrl(url) {
 }
 
 export function validateNumber(number) {
-    return number && validator.isNumeric(number)
+    return number && validator.isNumeric(number);
 }

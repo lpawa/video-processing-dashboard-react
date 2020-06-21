@@ -23,7 +23,7 @@ class SegmentVideo extends React.Component {
             isValidURL: false,
             isValidInput: false,
             segmentedVideos: [],
-        }
+        };
         this.setInput = this.setInput.bind(this);
         this.segmentVideo = this.segmentVideo.bind(this);
         this.handleVideoLinkChange = this.handleVideoLinkChange.bind(this);

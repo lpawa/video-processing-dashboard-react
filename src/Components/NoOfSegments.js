@@ -15,7 +15,7 @@ class NoOfSegments extends React.Component {
 
     handleInput(event) {
         let input = event.target.value;
-        this.props.setInput(input, this.checkValidity(input))
+        this.props.setInput(input, this.checkValidity(input));
     }
 
     render() {

@@ -15,7 +15,7 @@ class IntervalDuration extends React.Component {
 
     handleInput(event) {
         let input = event.target.value;
-        this.props.setInput(input, this.checkValidity(input))
+        this.props.setInput(input, this.checkValidity(input));
     }
 
     render() {
@@ -30,7 +30,7 @@ class IntervalDuration extends React.Component {
                     value={this.props.input || ""}
                 />
             </div>
-        )
+        );
     }
 }
 

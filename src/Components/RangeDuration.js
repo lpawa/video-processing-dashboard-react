@@ -7,7 +7,7 @@ class RangeDuration extends React.Component {
 
         this.state = {
             ranges: [],
-        }
+        };
 
         this.addStart = this.addStart.bind(this);
         this.addEnd = this.addEnd.bind(this);
@@ -22,30 +22,30 @@ class RangeDuration extends React.Component {
             let start = parseInt(range.start);
             let end = parseInt(range.end);
             return (acc && start>=0 && end>=0 && end>=start);
-        }, !!ranges.length)
+        }, !!ranges.length);
     }
 
     addStart(index, event) {
         let input = event.target.value;
         let ranges = this.state.ranges;
 
-        ranges[index]['start'] = parseInt(input);
+        ranges[parseInt(index)].start = parseInt(input);
 
-        this.setState({ranges: ranges}, this.updateParent)
+        this.setState({ranges: ranges}, this.updateParent);
     }
 
     addEnd(index, event) {
         let input = event.target.value;
         let ranges = this.state.ranges;
 
-        ranges[index]['end'] = parseInt(input);
+        ranges[parseInt(index)].end = parseInt(input);
 
-        this.setState({ranges: ranges}, this.updateParent)
+        this.setState({ranges: ranges}, this.updateParent);
     }
 
     updateParent() {
         let ranges = this.state.ranges;
-        this.props.setInput(ranges, this.checkValidity())
+        this.props.setInput(ranges, this.checkValidity());
     }
 
     addRange() {
@@ -92,7 +92,7 @@ class RangeDuration extends React.Component {
                         : null
                 }
             </React.Fragment>
-        )
+        );
     }
 }
 

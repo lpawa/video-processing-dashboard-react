@@ -44,7 +44,7 @@ class OutputVideo extends React.Component {
                     className={this.props.className}
                     sourceName={this.props.className+"-source"}
                 />
-            )
+            );
         }
     }
 }
