@@ -30,7 +30,7 @@ class NoOfSegments extends React.Component {
                     value={this.props.input || ""}
                 />
             </div>
-        )
+        );
     }
 }
 

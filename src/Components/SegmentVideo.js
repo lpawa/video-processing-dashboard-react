@@ -35,7 +35,7 @@ class SegmentVideo extends React.Component {
         this.setState({
             videoLink: link,
             isValidURL: validateUrl(link),
-        })
+        });
     }
 
     handleSettingsChange(event) {
@@ -51,7 +51,7 @@ class SegmentVideo extends React.Component {
         };
         let req_obj = {
             "video_link": this.state.videoLink,
-        }
+        };
 
         let segmentVideoRepo = new SegmentVideoRepository();
 
@@ -88,8 +88,8 @@ class SegmentVideo extends React.Component {
 
     setInput(input, isValidInput) {
         this.setState({
-            input: input,
-            isValidInput: isValidInput
+            input,
+            isValidInput
         })
     }
 

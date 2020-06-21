@@ -12,7 +12,7 @@ const REQUEST_HEADERS = {
         'Content-Type': 'application/json'
     },
     referrerPolicy: 'no-referrer',
-}
+};
 
 
 class SegmentVideoRepository {

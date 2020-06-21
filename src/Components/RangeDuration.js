@@ -31,7 +31,7 @@ class RangeDuration extends React.Component {
 
         ranges[parseInt(index)].start = parseInt(input);
 
-        this.setState({ranges: ranges}, this.updateParent);
+        this.setState({ranges}, this.updateParent);
     }
 
     addEnd(index, event) {
@@ -40,7 +40,7 @@ class RangeDuration extends React.Component {
 
         ranges[parseInt(index)].end = parseInt(input);
 
-        this.setState({ranges: ranges}, this.updateParent);
+        this.setState({ranges}, this.updateParent);
     }
 
     updateParent() {
@@ -54,13 +54,13 @@ class RangeDuration extends React.Component {
             start: "",
             end: "",
         });
-        this.setState({ranges: ranges});
+        this.setState({ranges});
     }
 
     deleteRange(index) {
-        let ranges = this.state.ranges;
+        let ranges = this.state.ranges.filter((obj, i) => i !== index);
         this.setState({
-            ranges: ranges.filter((obj, i) => i !== index)
+            ranges
         }, this.updateParent);
     }
 

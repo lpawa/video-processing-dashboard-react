@@ -40,7 +40,7 @@ class CombineVideo extends React.Component {
         ranges[parseInt(index)].start = parseInt(input);
 
         this.setState({
-            ranges: ranges,
+            ranges,
             isValid: this.checkValidity(ranges),
         });
     }
@@ -52,9 +52,9 @@ class CombineVideo extends React.Component {
         ranges[parseInt(index)].end = parseInt(input);
 
         this.setState({
-            ranges: ranges,
+            ranges,
             isValid: this.checkValidity(ranges),
-        })
+        });
     }
 
     addRange() {
@@ -65,14 +65,14 @@ class CombineVideo extends React.Component {
             video_url: ""
         });
         this.setState({
-            ranges: ranges,
+            ranges,
         });
     }
 
     deleteRange(index) {
         let ranges = this.state.ranges.filter((obj, i) => i !== index);
         this.setState({
-            ranges: ranges,
+            ranges,
             isValid: this.checkValidity(ranges),
         });
     }
@@ -83,13 +83,13 @@ class CombineVideo extends React.Component {
         ranges[parseInt(index)].video_url = input;
 
         this.setState({
-            ranges: ranges,
+            ranges,
             isValid: this.checkValidity(ranges),
         })
     }
 
     handleInput(event) {
-        let state = {}
+        let state = {};
         state[event.target.name] = parseInt(event.target.value);
         this.setState(state);
     }
@@ -100,7 +100,7 @@ class CombineVideo extends React.Component {
             "segments" : this.state.ranges,
             "width": this.state.width,
             "height": this.state.height,
-        }
+        };
         segmentVideoRepo.combineVideo(data).then((result) => {
             if(result['video_url']) {
                 this.setState({

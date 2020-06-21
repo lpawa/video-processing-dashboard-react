@@ -7,7 +7,7 @@ class RangeElement extends React.Component {
 
     render() {
         const index = this.props.index;
-        const val = index + 1
+        const val = index + 1;
         let range = this.props.range;
         let start = range.start;
         start = isNaN(start) ? "" : start;
