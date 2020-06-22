@@ -21,7 +21,7 @@ class RangeDuration extends React.Component {
         return ranges.reduce((acc, range) => {
             let start = parseInt(range.start);
             let end = parseInt(range.end);
-            return (acc && start>=0 && end>=0 && end>=start);
+            return (acc && start >= 0 && end >= 0 && end >= start);
         }, !!ranges.length);
     }
 
@@ -67,12 +67,14 @@ class RangeDuration extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <button
-                    onClick={this.addRange}
-                    className={"add-range-duration"}
-                >
-                    Add Range Duration
-                </button>
+                <div className={"buttonWrapper"}>
+                    <button
+                        onClick={this.addRange}
+                        className={"add-range-duration"}
+                    >
+                        Add Range Duration
+                    </button>
+                </div>
                 {
                     this.state.ranges.length ?
                         this.state.ranges.map(

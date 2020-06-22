@@ -97,12 +97,12 @@ class CombineVideo extends React.Component {
     combineVideos() {
         let segmentVideoRepo = new SegmentVideoRepository();
         let data = {
-            "segments" : this.state.ranges,
+            "segments": this.state.ranges,
             "width": this.state.width,
             "height": this.state.height,
         };
         segmentVideoRepo.combineVideo(data).then((result) => {
-            if(result['video_url']) {
+            if (result['video_url']) {
                 this.setState({
                     outputVideo: result
                 })
@@ -118,12 +118,14 @@ class CombineVideo extends React.Component {
                 <h1 className={"heading"}>Combine Video</h1>
                 <hr/>
                 <div className={"elements"}>
-                    <button
-                        onClick={this.addRange}
-                        className={"add-video"}
-                    >
-                        Add Video
-                    </button>
+                    <div className={"buttonWrapper"}>
+                        <button
+                            onClick={this.addRange}
+                            className={"add-video"}
+                        >
+                            Add Video
+                        </button>
+                    </div>
                     {
                         this.state.ranges.length ?
                             this.state.ranges.map(
@@ -169,7 +171,7 @@ class CombineVideo extends React.Component {
                             />
                         </div>
                     </div>
-                    <div>
+                    <div className={"buttonWrapper"}>
                         <button
                             onClick={this.combineVideos}
                             className={"combine-video"}

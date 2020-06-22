@@ -1,10 +1,9 @@
 import React from 'react';
 import {validateUrl} from "../Utils/validate-url";
 
-import IntervalDuration from "./IntervalDuration";
+import InputElement from "./InputElement";
 import RangeDuration from "./RangeDuration";
 import OutputVideo from "./OutputVideo";
-import NoOfSegments from "./NoOfSegments";
 
 import SegmentVideoRepository from "../Repository/SegmentVideoRepository";
 
@@ -94,6 +93,33 @@ class SegmentVideo extends React.Component {
     }
 
     render() {
+
+        let getDurationType = (type) => {
+            switch (type) {
+                case INTERVAL_DURATION:
+                    return <InputElement
+                        setInput={this.setInput}
+                        input={this.state.input}
+                        label={"Interval Duration (in seconds)..."}
+                        class={"interval-duration"}
+                    />
+                case RANGE_DURATION:
+                    return <RangeDuration
+                        setInput={this.setInput}
+                        input={this.state.input}
+                    />
+                case NO_OF_SEGMENTS:
+                    return <InputElement
+                        label={"Number of Segments..."}
+                        class={"num-segments"}
+                        setInput={this.setInput}
+                        input={this.state.input}
+                    />
+                default:
+                    return null
+            }
+        };
+
         return (
             <div>
                 <h1 className={"heading"}>Segment Video</h1>
@@ -127,23 +153,9 @@ class SegmentVideo extends React.Component {
                         </select>
                     </div>
                     {
-                        this.state.setting === INTERVAL_DURATION ?
-                            <IntervalDuration
-                                setInput={this.setInput}
-                                input={this.state.input}
-                            /> : this.state.setting === RANGE_DURATION ?
-                            <RangeDuration
-                                setInput={this.setInput}
-                                input={this.state.input}
-                            /> :
-                            this.state.setting === NO_OF_SEGMENTS ?
-                                <NoOfSegments
-                                    setInput={this.setInput}
-                                    input={this.state.input}
-                                /> :
-                                null
+                       getDurationType(this.state.setting)
                     }
-                    <div>
+                    <div className={"buttonWrapper"}>
                         {
                             <button
                                 onClick={this.segmentVideo}

@@ -1,7 +1,7 @@
 import React from 'react';
 import {validateNumber} from "../Utils/validate-url";
 
-class IntervalDuration extends React.Component {
+class InputElement extends React.Component {
     constructor(props) {
         super(props);
 
@@ -21,9 +21,9 @@ class IntervalDuration extends React.Component {
     render() {
         return (
             <div className={"inputElement"}>
-                <span><label>Interval Duration (in seconds)...</label></span>
+                <span><label>{this.props.label}</label></span>
                 <input
-                    className={"interval-duration"}
+                    className={this.props.class}
                     type={"number"}
                     required
                     onChange={this.handleInput}
@@ -34,4 +34,4 @@ class IntervalDuration extends React.Component {
     }
 }
 
-export default IntervalDuration;
+export default InputElement;
