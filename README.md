@@ -1,6 +1,15 @@
-# cj-app
+# Video Processing App
 React SPA
 
+### 1. Segment Videos by interval duration- 
+![1](./public/Screen%20Shot%202020-06-22%20at%202.10.16%20PM.png)
+### 2. Segment Videos by range duration-
+![2](./public/Screen%20Shot%202020-06-22%20at%202.11.38%20PM.png)
+### 3. Segment Videos by number of segments-
+![3](./public/Screen%20Shot%202020-06-22%20at%202.12.16%20PM.png)
+### 4. Combine Videos
+
+------------------------------------------------------------------------------
 IMPORTANT NOTES (In case Backend Service API Integration is required):
 
     1. The backend endpoint host url can be accessed using "process.env.REACT_APP_API_URL" property. An example is shown in index.js.
